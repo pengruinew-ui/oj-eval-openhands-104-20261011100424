@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
-#include <climits>
+#include <limits>
 #include <algorithm>
 using namespace std;
 
@@ -72,7 +72,7 @@ int main() {
     vector<vector<int>> dist_from_start = bfs(start.x, start.y, grid, m, n);
     vector<vector<int>> dist_from_home = bfs(home.x, home.y, grid, m, n);
     
-    int min_path = INT_MAX;
+    int min_path = numeric_limits<int>::max();
     
     // Check paths through each umbrella shop
     for (const Point& umbrella : umbrellas) {
@@ -93,7 +93,7 @@ int main() {
         }
     }
     
-    if (min_path == INT_MAX) {
+    if (min_path == numeric_limits<int>::max()) {
         cout << -1 << endl;
     } else {
         cout << min_path << endl;
